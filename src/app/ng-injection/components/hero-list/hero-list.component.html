@@ -1,0 +1,13 @@
+<ng-container *ngIf="heroList.length > 0 else noHero">
+  <div *ngFor="let hero of heroList">
+    姓名: {{ hero?.name }}
+  </div>
+</ng-container>
+
+<ng-container>
+  <ng-template #noHero>
+    暂无英雄
+  </ng-template>
+  
+</ng-container>
+
