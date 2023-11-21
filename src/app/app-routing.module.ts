@@ -1,15 +1,11 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { SecondComponent } from './ng-injection/components/second/second.component';
-import { HeroListComponent } from './ng-injection/components/hero-list/hero-list.component';
-import { IntroduceHeroComponent } from './ng-injection/components/introduce-hero/introduce-hero.component';
+import { Routes, RouterModule } from '@angular/router';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'/hero-list',pathMatch:'full'},
-  {path:'hero-list', component:HeroListComponent},
-  {path:'introduce-hero', component:IntroduceHeroComponent},
-
-  {path:'second-component', component:SecondComponent},
+  //模块样式
+  { path: '', pathMatch: 'full', redirectTo: '/welcome' },
+  { path: 'welcome', loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule) }
 ];
 
 @NgModule({

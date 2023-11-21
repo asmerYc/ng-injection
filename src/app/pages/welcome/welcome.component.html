@@ -1,0 +1,24 @@
+<div class="heroWrapper">
+    <h2>欢迎来到王者世界</h2>
+    <div class="heroCounterWrapper">
+        <div>
+            <span>英雄数量：</span>
+            <span class="heroCount">2</span>
+        </div>    
+    </div>
+    <ng-container *ngIf="heroList.length > 0,else NoHero">
+        <div class="heroList">
+            <div class="heroContainer"  *ngFor="let hero of heroList">
+                <img class="heroAvatar" src="{{hero.avatar}}" alt="">
+                <div class="heroInfo">
+                    <span>英雄:{{hero.name}}</span>
+                    <br />
+                    <span>角色:{{hero.role}}</span>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #NoHero>
+        <span>暂无英雄</span>
+    </ng-template>
+</div>

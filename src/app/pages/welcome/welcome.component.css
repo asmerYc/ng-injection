@@ -1,0 +1,22 @@
+.heroWrapper {
+    .heroCounterWrapper {
+
+    }
+    .heroList {
+        display: flex;
+        .heroContainer {
+            flex: 1;
+            position: relative;
+            text-align: center;
+            margin-right:5px;
+            padding: 10px;
+            border: 2px solid #c3c3c3;
+            cursor: pointer;
+            .heroAvatar {
+                width: 200px;
+                height: 200px;
+                border-radius: 5px;
+            }
+        }
+    }
+}
